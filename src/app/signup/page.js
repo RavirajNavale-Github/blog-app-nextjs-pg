@@ -14,7 +14,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!username || !password || !role) {
+    if (!username || !password) {
       alert("Fill all the Fields!");
       return;
     }
@@ -62,14 +62,7 @@ const Signup = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <label className="font-semibold mb-1">Role</label>
-            <input
-              type="text"
-              placeholder="Admin/User"
-              className="p-2 border-slate-600 border-2 rounded-lg mb-3 outline-none"
-              value={role}
-              onChange={(e) => setRole(e.target.value)}
-            />
+            
             <button
               type="submit"
               className="p-2 bg-slate-900 text-white rounded-lg mt-3"
