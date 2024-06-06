@@ -14,7 +14,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!username || !password) {
+    if (!username || !password || !role) {
       alert("Fill all the Fields!");
       return;
     }
@@ -23,13 +23,14 @@ const Signup = () => {
       const res = await fetch("http://localhost:3000/api/users/", {
         method: "POST",
         headers: { "Content-type": "application/json" },
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ username, password, role }),
       });
 
       if(res.ok){
         router.push('/');
+        alert('Registration Done.')
       }else{
-        throw new Error("Failed to Create User")
+        throw new Error("Failed to Register")
       }
     } catch (error) {
       console.log(error)

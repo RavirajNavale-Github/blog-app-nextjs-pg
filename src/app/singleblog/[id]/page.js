@@ -66,6 +66,12 @@ const SingleBlog = () => {
         >
           Delete
         </button>
+        <button
+          className="flex w-full justify-center rounded-md bg-white text-slate-900 mt-10 px-3 py-1.5 text-sm font-semibold leading-6 shadow-sm relative bottom-0"
+          onClick={() => router.push(`/updateblog/${blog.id}`)}
+        >
+          Edit
+        </button>
       </div>
     </div>
   );
