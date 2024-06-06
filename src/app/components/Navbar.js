@@ -56,6 +56,14 @@ const Navbar = () => {
               SignUp
             </button>
           </li>
+          <li>
+            <button
+              className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-6 py-2 text-sm font-medium"
+              onClick={() => router.push("/signin")}
+            >
+              SignIn
+            </button>
+          </li>
         </ul>
       </div>
     </nav>

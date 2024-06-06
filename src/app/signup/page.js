@@ -8,7 +8,7 @@ const Signup = () => {
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [role, setRole] = useState('');
+  // const [role, setRole] = useState('');
   // console.log(username, password)
 
   const handleSubmit = async (e) => {
@@ -23,17 +23,17 @@ const Signup = () => {
       const res = await fetch("http://localhost:3000/api/users/", {
         method: "POST",
         headers: { "Content-type": "application/json" },
-        body: JSON.stringify({ username, password, role }),
+        body: JSON.stringify({ username, password }),
       });
 
       if(res.ok){
-        router.push('/');
+        router.push('/signin');
         alert('Registration Done.')
       }else{
         throw new Error("Failed to Register")
       }
     } catch (error) {
-      console.log(error)
+      console.log("Error in Register",error)
     }
   };
 

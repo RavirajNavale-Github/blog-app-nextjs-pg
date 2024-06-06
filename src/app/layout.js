@@ -2,6 +2,7 @@
 import "./globals.css";
 import Navbar from "@/app/components/Navbar";
 import Footer from "./components/Footer";
+import AuthProvoider from "@/context/AuthProvider";
 
 // const inter = Inter({ subsets: ["latin"] });
 
@@ -15,8 +16,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="bg-gradient-to-r from-sky-100 to-indigo-300">
         <Navbar />
-        {children}
-        <Footer/>
+        <AuthProvoider>{children}</AuthProvoider>
+        <Footer />
       </body>
     </html>
   );
